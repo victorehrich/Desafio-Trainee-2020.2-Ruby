@@ -13,7 +13,7 @@ module Calculator
   
     def no_integers(numbers)
       
-      i=0;
+      i=0
       resultado = []
       numero = numbers.scan(/\w+/)
 
@@ -35,13 +35,29 @@ module Calculator
         end
         i+=1
       end
-      resultado
+      i=0
+      numbers = ""
+      while i<resultado.length
+       numbers << resultado[i]
+       i+=1
+      end
+      numbers
       
     end
   
     def filter_films(genres, year)
       films = get_films
-  
+      filmes = films[:movies]      
+      
+      i=0;
+      while i<filmes.length
+        if filmes[i][:genres].include?(genres)
+          if filmes[i][:year] >= year
+            puts filmes[i][:title]
+          end
+        end
+      i+=1
+      end
     end
     
     private
