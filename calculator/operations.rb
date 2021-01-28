@@ -13,21 +13,29 @@ module Calculator
   
     def no_integers(numbers)
       
-        if numbers[numbers.length-2] == '0'
-          if numbers[numbers.length-3] == '5' || numbers[numbers.length-3] == '0'
-            numbers = 'S'
+      i=0;
+      resultado = []
+      numero = numbers.scan(/\w+/)
+
+      while i < numero.length
+        if numero[i][numero[i].length-2] == '0'
+          if numero[i][numero[i].length-3] == '5' || numero[i][numero[i].length-3] == '0'
+            resultado[i] = 'S '
           else
-            numbers = 'N'
+            resultado[i] = 'N '
           end
-        elsif numbers[numbers.length-2] == '5'
-          if numbers[numbers.length-3] == '2' || numbers[numbers.length-3] == '7'
-            numbers = 'S'
+        elsif numero[i][numero[i].length-2] == '5'
+          if numero[i][numero[i].length-3] == '2' || numero[i][numero[i].length-3] == '7'
+            resultado[i] = 'S '
           else
-            numbers = 'N'
+            resultado[i] = 'N '
           end
         else
-          numbers = 'N'
+          resultado[i] = 'N '
+        end
+        i+=1
       end
+      resultado
       
     end
   

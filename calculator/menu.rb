@@ -11,16 +11,17 @@ module Calculator
     puts "Sua opção: "
     optionMenu = gets.chomp.to_i
     
+    #case de opcoes do menu
     case optionMenu
       when 1
         Operations.new
         media = biased_mean()
       when 2
+        puts "Digite o numero"
         numbers = gets.chomp
-        puts numbers[numbers.length - 2]
+       # puts numbers.scan(/\w+/)
         numero = Operations.new
-        puts numero.no_integers(numbers)
-                
+        puts numero.no_integers(numbers)             
       when 3
         
       else
