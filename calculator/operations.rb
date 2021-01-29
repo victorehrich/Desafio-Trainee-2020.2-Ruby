@@ -37,8 +37,8 @@ module Calculator
       
       i=0
       resultado = []
-      numero = numbers.scan(/\w+/)
-
+      numero = numbers.split
+      puts numbers.class
       while i < numero.length
         if numero[i][numero[i].length-2] == '0'
           if numero[i][numero[i].length-3] == '5' || numero[i][numero[i].length-3] == '0'
@@ -46,8 +46,8 @@ module Calculator
           else
             resultado[i] = 'N '
           end
-        elsif numero[i][numero[i].length-2] == '5'
-          if numero[i][numero[i].length-3] == '2' || numero[i][numero[i].length-3] == '7'
+        elsif numero[i][numero[i].length-2] === '5'
+          if numero[i][numero[i].length-3] === '2' || numero[i][numero[i].length-3] == '7'
             resultado[i] = 'S '
           else
             resultado[i] = 'N '
@@ -55,6 +55,7 @@ module Calculator
         else
           resultado[i] = 'N '
         end
+        puts " #{numero[i][numero[i].length-2].class} - #{numero[i][numero[i].length-3]}"
         i+=1
       end
       i=0
