@@ -7,8 +7,30 @@ module Calculator
     include ExtraOperations
   
     def biased_mean(grades, blacklist)
+      notas = JSON.parse(grades)
 
-    
+        i = 0
+        z = 0
+        media = 0
+        cont = 0
+        while i < notas.length
+          while z < blacklist.split.length
+            if notas.keys[i] == blacklist.split[z]
+              notas.delete(blacklist.split[z])
+            end
+            z+=1
+          end
+          i+=1
+          z=0
+        end
+
+        i=0
+        while i < notas.length
+          media += notas.values[i]
+          cont += 1
+          i += 1
+        end
+        result = media/cont
     end
   
     def no_integers(numbers)

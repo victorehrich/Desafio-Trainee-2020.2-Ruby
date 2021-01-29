@@ -5,9 +5,9 @@ module Calculator
     def initialize
 
     puts "-------------------------\n| Bem vindo a calculadora |\n-------------------------"
-    puts "1. Operacao 1"
-    puts "2. Operacao 2"
-    puts "3. Operacao 3"
+    puts "1. Média preconceituosa"
+    puts "2. Calculadora sem números"
+    puts "3. Filtrar filmes"
     puts "4. Sair"
     puts "Sua opção: "
     optionMenu = gets.chomp.to_i
@@ -15,25 +15,28 @@ module Calculator
     #case de opcoes do menu
     case optionMenu
       when 1
-        Operations.new
-        media = biased_mean()
+        puts "Digite o JSON com alunos e notas:"
+        grades = gets.chomp
+        puts "Digite a blacklist:"
+        blacklist = gets.chomp
+        nota = Operations.new
+        puts "Média: #{nota.biased_mean(grades,blacklist)}"
       when 2
-        puts "Digite o numero"
+        puts "Digite o número que deseja conferir:"
         numbers = gets.chomp.to_s
-      #colocar um bloquei de tipo integer
         numero = Operations.new
         puts numero.no_integers(numbers)             
       when 3
-        puts "Digite o genero"
+        puts "Digite o gênero:"
         genres = gets.chomp
-        puts "Digite o ano"
+        puts "Digite o ano:"
         year = gets.chomp
         filme = Operations.new
         puts filme.filter_films(genres,year)
       when 4
-        
+        exit
       else
-        puts  "opcao invalida"
+        puts "Opção inválida:"
       end
     end
   end
