@@ -70,11 +70,14 @@ module Calculator
   
     def filter_films(genres, year)
       films = get_films
-      filmes = films[:movies]      
+      filmes = films[:movies]
+      genresArray = genres.split  
+      
+      puts"#{genresArray - filmes[0][:genres]}"
       
       i=0;
       while i<filmes.length
-        if filmes[i][:genres].include?(genres)
+        if (genresArray - filmes[i][:genres]).empty?
           if filmes[i][:year] >= year
             puts filmes[i][:title]
           end

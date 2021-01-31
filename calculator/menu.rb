@@ -15,6 +15,7 @@ module Calculator
     #case de opcoes do menu
     case optionMenu
       when 1
+        system ("cls")
         puts "Digite o JSON com alunos e notas:"
         grades = gets.chomp
         puts "Digite a blacklist:"
