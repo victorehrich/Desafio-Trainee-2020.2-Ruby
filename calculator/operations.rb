@@ -38,7 +38,6 @@ module Calculator
       i=0
       resultado = []
       numero = numbers.split
-      puts numbers.class
       while i < numero.length
         if numero[i][numero[i].length-2] == '0'
           if numero[i][numero[i].length-3] == '5' || numero[i][numero[i].length-3] == '0'
@@ -55,7 +54,6 @@ module Calculator
         else
           resultado[i] = 'N '
         end
-        puts " #{numero[i][numero[i].length-2].class} - #{numero[i][numero[i].length-3]}"
         i+=1
       end
       i=0
@@ -72,8 +70,6 @@ module Calculator
       films = get_films
       filmes = films[:movies]
       genresArray = genres.split  
-      
-      puts"#{genresArray - filmes[0][:genres]}"
       
       i=0;
       while i<filmes.length
